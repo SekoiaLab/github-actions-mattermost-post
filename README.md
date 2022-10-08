@@ -24,7 +24,7 @@ Hexa value of the color to use. Fallback to `#47ba04` (green).
 
 
 ```yaml
-- uses: ./.github/actions/mattermost-post-webhook
+- uses: SekoiaLab/github-actions-mattermost-post@v1
   with:
     webhook-url: 'https://mattermost/hooks/xxxx'
     text: 'GitHub Actions **failed to deploy** `${{ github.event.deployment.payload.microservices }}` (`${{ github.event.deployment.payload.release_id }}`) on production. [Click here to see the full log](https://github.com/SekoiaLab/platform/actions/runs/${{ github.run_id }}).'
