@@ -1,5 +1,6 @@
 name: Mattermost Post WebHook
 description: Post a message to Mattermost thanks to a WebHook URL
+
 inputs:
   webhook-url:
     description: WebHook URL to post message to
@@ -23,5 +24,5 @@ inputs:
     default: '#47ba04'
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
