@@ -2,27 +2,47 @@ name: Mattermost Post WebHook
 description: Post a message to Mattermost thanks to a WebHook URL
 
 inputs:
+  mattermost-url:
+    description: Mattermost URL to respond to messages
+    required: false
+    default: "https://chat.sekoia.io"
+
+  channel-id:
+    description: channel ID to send the message to. Retrieve it from info dropdown in the channel.
+    required: false
+    # default to `platform-changes`
+    default: "nma3kq5wwtfxpfac55mag397cr"
+
   webhook-url:
     description: WebHook URL to post message to
     required: true
-    type: string
+
+  bot-token:
+    description: Bot access token for authentication
+    required: true
+
+  thread-id:
+    description: Thread ID (post ID) to reply to
+    required: true
+
+  use-attachment:
+    description: If set to true it should send message as an attachement in mattermost
+    required: false
+    default: "true"
 
   text:
     description: Text message that should be posted to Mattermost
     required: true
-    type: string
 
   title:
     description: Main message title
-    type: string
     required: false
 
   color:
     description: Message color
-    type: string
     required: false
-    default: '#47ba04'
+    default: "#47ba04"
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"
